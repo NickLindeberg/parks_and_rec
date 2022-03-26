@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :dashboard, only: [:index]
-  root to: "dashboard#index"
+  root to: "quotes#index"
+  resources :quotes, only: [:index]
 end
