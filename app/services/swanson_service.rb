@@ -3,7 +3,7 @@ class SwansonService
   base_uri 'https://ron-swanson-quotes.herokuapp.com/v2/'
 
   def initialize(quote)
-    @options = {query: quote}
+    @quote = quote
   end
 
   def quote
