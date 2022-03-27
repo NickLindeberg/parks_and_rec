@@ -1,15 +1,3 @@
-<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
-
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -17,8 +5,30 @@
         <h1 class="fw-dark">
           <%= render partial: "quote" %>
           <%= button_to "Refresh", quotes_path, :method => :get %>
+          <button type="button" class="btn btn-primary text-center" data-bs-toggle="modal" data-bs-target="#ratingModal">
+            Rate
+          </button>
         </h1>
       </div>
     </div>
   </section>
+
 </main>
+
+<div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ratingModalLabel">Rate This Quote!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
