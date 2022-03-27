@@ -20,6 +20,7 @@ group :development, :test do
   gem 'launchy'
   gem 'vcr'
   gem 'webmock'
+  gem 'shoulda-matchers'
 end
 
 group :development do
