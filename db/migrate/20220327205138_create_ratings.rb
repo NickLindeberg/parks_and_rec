@@ -3,7 +3,8 @@ class CreateRatings < ActiveRecord::Migration[6.1]
     create_table :ratings do |t|
       t.integer :score
       t.belongs_to :quote, foreign_key: true
-      
+      t.belongs_to :user, foreign_key: true
+
       t.timestamps
     end
   end

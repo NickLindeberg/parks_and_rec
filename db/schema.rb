@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_27_205138) do
+ActiveRecord::Schema.define(version: 2022_03_27_210630) do
 
   create_table "quotes", force: :cascade do |t|
     t.string "thought"
@@ -21,10 +21,19 @@ ActiveRecord::Schema.define(version: 2022_03_27_205138) do
   create_table "ratings", force: :cascade do |t|
     t.integer "score"
     t.integer "quote_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["quote_id"], name: "index_ratings_on_quote_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "ip_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "ratings", "quotes"
+  add_foreign_key "ratings", "users"
 end
