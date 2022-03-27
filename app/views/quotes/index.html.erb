@@ -1,6 +1,5 @@
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
-    <h5 class="text-white h4">Something REALLY funny here</h5>
   </div>
 </div>
 <nav class="navbar navbar-dark bg-dark">
@@ -16,7 +15,8 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-dark">
-          <%= @quote %>
+          <%= render partial: "quote" %>
+          <%= button_to "Refresh", quotes_path, :method => :get %>
         </h1>
       </div>
     </div>
