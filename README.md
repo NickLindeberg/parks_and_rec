@@ -1,6 +1,7 @@
 # ParksAndRec
 
 [ParksAndRec On Heroku](https://parknrec.herokuapp.com/quotes)
+[Ron Swanson API](https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api)
 
 ## Stack
 - Ruby 3
