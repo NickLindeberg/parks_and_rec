@@ -21,6 +21,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'shoulda-matchers'
+  gem 'spring'
 end
 
 group :development do

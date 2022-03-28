@@ -24,3 +24,5 @@ test:
 production:
   <<: *default
   database: parks_and_rec_development_production
+  username: rails
+  
