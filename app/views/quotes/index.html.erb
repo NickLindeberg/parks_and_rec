@@ -4,31 +4,16 @@
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-dark">
           <%= render partial: "quote" %>
-          <%= button_to "Refresh", quotes_path, :method => :get %>
-          <button type="button" class="btn btn-primary text-center" data-bs-toggle="modal" data-bs-target="#ratingModal">
-            Rate
-          </button>
+          <div>Average Score: <%= @ratings.average_score %></div>
+          <% if @ratings.any? { |r| r.user_id == @user.id } %>
+            You can only rate this once
+          <% else %>
+            <button type="button" class="btn btn-info" >
+              <%= link_to "Rate Quote", new_quote_rating_path(@quote) %>
+            </button>
+          <% end %>
         </h1>
       </div>
     </div>
   </section>
-
 </main>
-
-<div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ratingModalLabel">Rate This Quote!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>

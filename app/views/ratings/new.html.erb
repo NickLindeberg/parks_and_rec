@@ -1,0 +1,12 @@
+<div class="py-5 text-center container">
+  <h1>Please Give This Quote A Rating</h1>
+  <%= @quote.thought %>
+</div>
+
+<div class="mt-auto form-box text-center container">
+
+  <%= form_for [@quote, @rating], :remote => true do |f| %>
+    <%= f.select :score, options_for_select(1..5) %>
+    <div><%= f.submit class:"btn btn-info mb-2 mt-5" %></div>
+  <% end %>
+</div>
