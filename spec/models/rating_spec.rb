@@ -9,7 +9,7 @@ RSpec.describe Rating, type: :model do
     it { should belong_to(:quote) }
   end
 
-  describe 'average_score' do
+  describe 'methods' do
     let(:user)      { User.create(ip_address: "1234::1") }
     let(:quote_1)   { Quote.create(thought: "snarky comment") }
     let(:quote_2)   { Quote.create(thought: "fun thing to say") }
@@ -23,6 +23,14 @@ RSpec.describe Rating, type: :model do
 
     it 'returns no ratings yet for unrate quotes' do
       expect(quote_2.ratings.average_score).to eq("No Ratings Yet")
+    end
+
+    it 'returns true if a user has already rated the quote' do
+      expect(quote_1.ratings.already_rated_by_user(user)).to be true
+    end
+
+    it 'returns true if a user has not rated the quote' do
+      expect(quote_2.ratings.already_rated_by_user(user)).to be false
     end
   end
 end

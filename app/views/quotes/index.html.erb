@@ -5,7 +5,7 @@
         <h1 class="fw-dark">
           <%= render partial: "quote" %>
           <div>Average Score: <%= @ratings.average_score %></div>
-          <% if @ratings.any? { |r| r.user_id == @user.id } %>
+          <% if @ratings.already_rated_by_user(@user) %>
             You can only rate this once
           <% else %>
             <button type="button" class="btn btn-info" >
