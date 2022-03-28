@@ -7,6 +7,11 @@ class QuotesController < ApplicationController
     @ratings = @quote.ratings
   end
 
+  def show
+    @quote = Quote.last(params[:id]).sample.thought
+    render js: "alert('Bonus quote! #{@quote}')"
+  end
+
   private
 
   def user_ip
