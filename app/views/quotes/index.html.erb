@@ -1,0 +1,26 @@
+<main>
+  <section class="py-5 text-center container">
+    <h1>Welcome To ParksAndRec!</h1>
+    <h2>Below you will be treated to some quotes by our beloved Ron Swanson</h2>
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-dark">
+          <%= render partial: "quote" %>
+          <div>Average Score: <%= @ratings.average_score %></div>
+          <% if @ratings.already_rated_by_user(@user) %>
+            You can only rate this once
+          <% else %>
+            <button type="button" class="btn btn-info" >
+              <%= link_to "Rate Quote", new_quote_rating_path(@quote) %>
+            </button>
+          <% end %>
+        </h1>
+        <div class='mt-5'>
+          <button type="button" class="btn btn-info" >
+            <%= link_to 'Another Random Quote', quote_path(5), remote: true %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

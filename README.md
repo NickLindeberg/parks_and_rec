@@ -1,24 +1,19 @@
-# README
+# ParksAndRec
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[ParksAndRec On Heroku](https://parknrec.herokuapp.com/quotes)
+[Ron Swanson API](https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api)
 
-Things you may want to cover:
+## Stack
+- Ruby 3
+- Rails 6
+- Bootstrap 5
 
-* Ruby version
+## Testing
+- Shoulda Matchers
+- VCR/Webmock
+- Rspec/CapyBara
 
-* System dependencies
+## Painpoints
+This was a fun project meant to show skills in Ruby, Rails, API calls and some testing around it all.  I really enjoyed the process of creating a rails 6 application from scratch.  It has been roughly 3 years since I've built a greenfield rails project to this scale (I have been focused on React lately).  Though I feel good about the final product, there are definitely things I would change, given the time/change.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+My biggest issues were environmental.  I haven't spun up a rails 6 project on my personal machine before and it took a good chunk of an afternoon to get up and running.  My other issue was deploying to Heroku.  I was successful but there were many attempts to get it right.  
